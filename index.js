@@ -22,7 +22,7 @@ module.exports = function (app) {
     debug(`Stop plugin routes`)
   }
 
-  plugin.id = 'notes'
+  plugin.id = 'routes'
   plugin.name = 'Signal K Routes'
   plugin.description =
     "Plugin that provides a source of route resources"
