@@ -3,7 +3,7 @@
  *
  */
 
-const debug = require('debug')('notes')
+const debug = require('debug')('routes')
 
 module.exports = function (app) {
   const error = app.error || (msg => {console.error(msg)})
@@ -13,19 +13,19 @@ module.exports = function (app) {
   var plugin = {}
 
   plugin.start = function (props) {
-    debug(`Start plugin notes`)
+    debug(`Start plugin routes`)
     pluginStarted === false && registerRoutes()
     pluginStarted = true
   }
 
   plugin.stop = function () {
-    debug(`Stop plugin notes`)
+    debug(`Stop plugin routes`)
   }
 
   plugin.id = 'notes'
-  plugin.name = 'Signal K Notes'
+  plugin.name = 'Signal K Routes'
   plugin.description =
-    "Plugin that provides a source of note resources"
+    "Plugin that provides a source of route resources"
 
   plugin.schema = {
     type: 'object',
@@ -35,7 +35,7 @@ module.exports = function (app) {
 
   function registerRoutes() {
 
-    app.get(apiRoutePrefix + "/notes", (req, res) => {
+    app.get(apiRoutePrefix + "/routes", (req, res) => {
       res.json({})
     })
   }
